@@ -1,0 +1,50 @@
+# scikit-image meeting 2019-09-16
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Juan, Stéfan, Alex, Volker, Lars
+
+## Items from the previous meeting
+
+## Agenda
+
+Search for `TODO` to find action items.
+
+- blocking issues for 0.16
+    - full list of issues from milestone is here: https://github.com/scikit-image/scikit-image/milestone/12
+        - I don't think we will get through more than a small fraction of these. I will prioritise bugs here.
+        - PRs discussed:
+            - [3125](https://github.com/scikit-image/scikit-image/pull/3125) : TODO N-d rotation matrices; Josh W will take a look
+            - [3173](https://github.com/scikit-image/scikit-image/pull/3173) : TODO Stéfan will take a look, apparently he is blocking that one
+            - [3928](https://github.com/scikit-image/scikit-image/pull/3928) : needs a more descriptive docstring for the `load_pattern` argument; TODO Alex will do
+        - Issues discussed:
+            - 3980: TODO need to fix discrepancy between Otsu/Multi-Otsu — Alex will take a quick look
+            - 3785: TODO should be a quick fix, Juan will take a look
+    
+- Reviews are needed for:
+    - [fix anisotropic blob finding](https://github.com/scikit-image/scikit-image/pull/4162) (Juan)
+    - [add drawline nd](https://github.com/scikit-image/scikit-image/pull/2043) (Juan)
+
+- suggestion: lower deprecation length from two to one cycle - at least for changes where we can detect the old/now incorrect behavior
+    - TODO propose to mailing list: Josh Warner will do
+
+- governance
+    - Requesting another round of review on [PR 3585](https://github.com/scikit-image/scikit-image/pull/3585) (SKIPs, vision/values, and governance) (Stéfan)
+
+- API overrides
+    - [NEP 18](https://numpy.org/neps/nep-0018-array-function-protocol.html)
+    - [__array__ function in dask](https://blog.dask.org/2019/03/18/dask-nep18)
+    - [uarray](https://github.com/Quansight-Labs/uarray)
+
+- benchmarking
+    - Should we *require* benchmarks?
+    - Do we want benchmarks which may take higher time to run (larger images, etc.)
+    - Conclusion: add benchmark for performance regressions, or places that we care about specifically
+    - Josh: Perhaps we could consider a set of benchmarks on 12 MPxl (lower bound) images in ASV, covering typical use of a majority of at least core/highly used functions?
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
+
