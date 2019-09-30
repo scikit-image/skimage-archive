@@ -1,0 +1,43 @@
+# scikit-image meeting 2019-09-30
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Juan, Stéfan
+
+## Items from the previous meeting
+
+- [3125](https://github.com/scikit-image/scikit-image/pull/3125) : TODO N-d rotation matrices; Josh W will take a look
+- **DONE** [3173](https://github.com/scikit-image/scikit-image/pull/3173) : TODO Stéfan will take a look, apparently he is blocking that one
+- **DONE** (Alex opted to remove the old pattern from the documentation, thus "forcing" the new one) [3928](https://github.com/scikit-image/scikit-image/pull/3928) : needs a more descriptive docstring for the `load_pattern` argument; TODO Alex will do
+- **WIP** (A refactoring proposed in [4178] seems to solve the issues found. Needs review (cython involved); Alex will chech when he comes back) [3980](https://github.com/scikit-image/scikit-image/pull/3980): TODO need to fix discrepancy between Otsu/Multi-Otsu — Alex will take a quick look
+- **DONE** [3785](https://github.com/scikit-image/scikit-image/pull/3785): TODO should be a quick fix, Juan will take a look
+- Propose shorter deprecation cycle (two to one cycle) to mailing list, at least for changes where we can detect old/now incorrect behavior - Josh Warner will do
+
+
+## Agenda
+
+- Governance added! Please check for issues in https://scikit-image.org/docs/dev/values.html and https://scikit-image.org/docs/dev/skips/index.html
+    - SKIPs should be added to documentation TOC [TODO Juan]
+    - SKIP 2 formatting issue [TODO Juan]
+    - Better formatting of authors [TODO Stéfan]
+- Documentation builds: references are not rendered perfectly [TODO Stéfan]
+- Any remaining issues for 0.16?
+    - https://github.com/scikit-image/scikit-image/pull/4187
+    - https://github.com/scikit-image/scikit-image/pull/3544
+    - https://github.com/scikit-image/scikit-image/pull/3544#issuecomment-535516956
+        - settled on reference/moving for registration
+        - image0/image1 for comparison
+        - [TODO Juan]
+- API for optical flow dtype https://github.com/scikit-image/scikit-image/pull/4196
+    - if dtype, make it actual dtype object rather than string; np.float64 maps to cnp.float64_t correctly, as with 32-bit.
+    - discussions at https://github.com/scikit-image/scikit-image/pull/4187#issuecomment-536025590 and https://github.com/scikit-image/scikit-image/pull/4196 [TODO Stéfan to comment]
+- For NumFOCUS sponsorship, we need a code of conduct. We currently have
+  community guidelines only, but may benefit from using that as a summary and then adopting SciPy's CoC wholesale. See [our application in preparation](https://hackmd.io/s_hodTUFSAKRiIdibG3i-w); [TODO: Stéfan will email proposal to skimage-core list]
+- Stéfan has created a mailing list for the steering council; steering council members will receive an invitation shortly
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
+
