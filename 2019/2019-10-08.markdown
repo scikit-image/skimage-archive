@@ -1,0 +1,37 @@
+# scikit-image meeting 2019-10-08
+
+Starting time: 16:00 (CEST), 7am (PDT)
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Emmanuelle, Thomas, Nelle, Lars
+
+
+## Items from the previous meeting
+
+- See [scikit-image/meeting-notes](https://github.com/scikit-image/meeting-notes).
+
+
+## Agenda
+
+- release of 0.16
+    - blocking: Travis fails on MacOS due to brew issue:
+        - [Use new cask address for homebrew on Travis #4213](https://github.com/scikit-image/scikit-image/pull/4213)
+        - [FIX + MAINT installation of cask on travis (OSX) #4219](https://github.com/scikit-image/scikit-image/pull/4219)
+- Thinking about how to implement ND-prominence calculation (Lars)
+    - as opposed to filter techniques such as used in h_maxima
+    - Max-Trees might be useful
+    - use standard types from libcpp for efficient data structures while releasing the GIL
+    - as by-product of ridge-detection?
+- Two possible definitions for h_maxima: [H-extrema #2797](https://github.com/scikit-image/scikit-image/issues/2797)
+    - suggestion: use MATLAB's definition and
+        - depreciate the old function
+        - provide two implementations old and new
+        - look into it until next meeting, 
+- strange behavior for floats in h_maxima: 
+  [h_maxima/minima strange behaviors on floating point image input #4194](https://github.com/scikit-image/scikit-image/issues/4194)
+
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
