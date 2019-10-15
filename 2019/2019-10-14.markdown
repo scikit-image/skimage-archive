@@ -1,0 +1,40 @@
+# scikit-image meeting 2019-10-14
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Alex, Juan, Stéfan
+
+## Items from the previous meeting
+
+- **DONE** SKIPs should be added to the documentation TOC [Juan]
+- **DONE** SKIP2 header is incorrectly formatted [Juan]
+- Better formatting for author names [Stéfan]
+- Better formatting for references in our docs [Stéfan]
+- **DONE** Change registration API to "reference_image" and "moving_image" [Juan]
+- **DONE** Change comparison API to "image0" and "image1" [Juan]
+- **DONE** Use dtype=(actual dtype object) as the float/double API for optical flow [Stéfan to comment on https://github.com/scikit-image/scikit-image/pull/4189#issuecomment-536025590 and https://github.com/scikit-image/scikit-image/pull/4196]
+- **DONE** Propose adopting SciPy CoC to core mailing list [Stéfan]
+
+
+## Agenda
+
+- 0.16 release debrief
+    - TODO stop shipping .c files (Juan)
+    - TODO PR to scikit-image-wheels master to add Python 3.8 to the build matrix (Stéfan?)
+    - release 0.16.2 with Python 3.8 in the build matrix (Juan, Nelle)
+    - TODO Check again on pyproject.toml, what were the issues, have they been fixed (this might help with requiring Cython to build) (Juan)
+    - [Update to release
+      instructions](https://github.com/scikit-image/scikit-image/pull/3658)
+      that we forgot to merge 🤦
+        - TODO Stéfan will follow up on comments
+- [Accelerating fundamental functions with
+  gputools](https://github.com/scikit-image/scikit-image/pull/4215)
+- TODO (Alex) investigate bibtex for references rather than ReST
+    - https://github.com/matthew-brett/bibstuff
+    - https://sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
