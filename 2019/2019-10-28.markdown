@@ -1,0 +1,55 @@
+# scikit-image meeting 2019-10-28
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Alex, Juan, Lars
+
+## Items from the previous meeting
+
+- Releases
+    - **TODO (Juan)** stop shipping .c files **Waiting on pyproject.toml**
+    - **DONE (Stéfan)** PR to scikit-image-wheels master to add Python 3.8 to the build matrix **but still waiting on SciPy**
+    - **DONE (Juan, Nelle)** release 0.16.2 with Python 3.8 in the build matrix **0.16.2 released** but not 3.8 compatible as SciPy wheels still not available.
+    - **DONE (Juan)** Check again on pyproject.toml, what were the issues, have they been fixed (this might help with requiring Cython to build)
+    - **DONE** [Update to release notes](https://github.com/scikit-image/scikit-image/pull/3658) that we forgot to merge 🤦
+- Better formatting for author names [Stéfan] — see https://github.com/scikit-image/scikit-image/pull/4271
+- Better formatting for references in our docs [Stéfan] — S: going to punt on this for now
+- Research Bibtex tools for references in docs [Alex]
+    - https://github.com/matthew-brett/bibstuff (Matt retired this in favor of sphinxcontrib)
+    - https://sphinxcontrib-bibtex.readthedocs.io/en/latest/quickstart.html (well-maintained, looks straightforward to use)
+
+## Agenda
+
+- State of Python 3.8 support [Stéfan] (conda-forge support will take a while; library issues on Windows)
+- pyproject.toml and build isolation [Juan]
+    - main problem was requiring recent pip. SciPy now has a pyproject.toml that seems to be working, so we can probably do the same. Further reading:
+        - https://github.com/scipy/scipy/issues/8734
+        - https://github.com/scipy/scipy/pull/9924/files
+        - https://github.com/astrofrog/fast-histogram/issues/35
+        - https://rasterio.groups.io/g/main/topic/rasterio_and_pip_19/29541909
+- h_maxima/minima bug https://github.com/scikit-image/scikit-image/issues/4194
+- new piwik instance to track visitors to website (piwik is now matomo: https://github.com/matomo-org/)
+- Lars: alternative to copybutton for examples in HTML doc: toggle prompt with javascript https://github.com/python/python-docs-theme/blob/master/python_docs_theme/static/copybutton.js
+- Lars: website not mobile friendly
+- Alex: improve our process around long-term projects to prevent stalled PRs. Some ideas:
+    - Use github projects for releases
+    - Add a "ready for final review" column in projects
+    - be more aggressive tagging people who might help quickly track down bugs
+    - spend more time triaging, and add triaging instructions to the core dev docs
+
+## Action items
+
+- [Juan] Write PR to add pyproject.toml back to project.
+- [Juan] Write to piwik.pro and matomo admins about free hosting for FOSS
+- [Lars] Add button to remove prompts in example code, for better copy-paste
+  experience from docs
+- [Lars] See whether we can make the site mobile-friendly
+- [Alex/Lars] Improve core dev docs with project management recommendations
+- [Any] Figure out the hminima/maxima bug
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
+
