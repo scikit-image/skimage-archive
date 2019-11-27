@@ -1,0 +1,41 @@
+# scikit-image meeting 2019-11-25
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Emma, Alex, Juan, Axel =P
+
+## Items from the previous meeting
+- [Juan] Write PR to add pyproject.toml back to project.
+    - See discussion at https://github.com/scikit-image/scikit-image/issues/4261 and PR at https://github.com/scikit-image/scikit-image-wheels/pull/34
+- [Juan] Write to piwik.pro and matomo admins about free hosting for FOSS
+    - They would offer 2 months off 12, which is prohibitive. Looks like we have to go for self-hosted.
+- [Lars] Add button to remove prompts in example code, for better copy-paste
+  experience from docs
+    - Done at https://github.com/scikit-image/scikit-image/pull/4273 thanks @lagru!
+- [Lars] See whether we can make the site mobile-friendly
+- [Alex/Lars] Improve core dev docs with project management recommendations
+- [Any] Figure out the hminima/maxima bug
+
+## Agenda
+- [#4320](https://github.com/scikit-image/scikit-image/issues/4320) 
+    - function is overlaying images from centre instead of top left (corresponding to indexing). We all agree this is "buggy" and unexpected. We probably need to change this.
+- New wheels: https://github.com/scikit-image/scikit-image/issues/4261 and https://github.com/scikit-image/scikit-image-wheels/pull/34
+    - postponed until @stefanv can weigh in
+- [Emma] CZI grant starting soon!
+- Rise from the grave: [#397](https://github.com/scikit-image/scikit-image/pull/397), [#518](https://github.com/scikit-image/scikit-image/pull/518), [#663](https://github.com/scikit-image/scikit-image/pull/663)
+- list of PRs with one approving review: https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved
+
+## action items
+- Juan to grant Emma (and others) access to tiny ~~piwik~~ matomo instance
+    - Alternatives: [matomo](https://matomo.org/), [Open Web Analytics](http://www.openwebanalytics.com/), [AWStats](http://www.awstats.org/), [Fathom Lite](https://github.com/usefathom/fathom)
+- Juan to track down API updates issue for RAGs #397 and comment there
+- Alex to close #518 with nice message. =)
+- Alex to close 663 AND 1053 with message explaining that if anyone wants to pick it up to push it over the line, they should do so.
+- Alex to share big 3D fiber segmentation dataset
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
+
