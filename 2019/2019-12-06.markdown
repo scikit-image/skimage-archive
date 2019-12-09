@@ -1,0 +1,45 @@
+# scikit-image meeting 2019-12-06
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Marianne, Lars, Emma
+
+## Minutes
+
+### Introducing ourselves
+
+Marianne: physics and research background, former plotly employee, now
+independent researcher and developer in Milan, Italy
+
+Lars: finishing a master in electrical engineering in Dresden, Germany, doing
+research on ultrasonic imaging for the brain.
+
+Emma: background in research in materials science, on leave from academia to
+work with plotly in Montreal, funded by CZI to work on scikit-image and
+plotly/Dash.
+
+### Content of CZI grant
+
+ - funds 50% of Emma and ~10% of Marianne on scikit-image work. 
+ - Work packages
+    - Community support: help reviewing PRs in particular. Don't hesitate to
+      ping Emma if one of your PRs requires attention (and Emma will be ping
+      someone else if required ;-).
+    - Writing documentation, in particular relevant for life sciences. Open PR
+      on pooch by Mark will be very useful for using larger datasets. Marianne: do we
+      also need more narrative documentation? Lars also shared https://www.divio.com/blog/documentation/, a blog post about the different types of documentation.
+    - Acceleration of some scikit-image where performance is critical.
+      Approach: start with benchmarks, then try different strategies (based on
+apply_parallel in particular) 
+
+### Upcoming conferences and workshops
+
+- [Lars] Hackaton in Dresden next week, targeted to the Fiji/ImageJ and KNIME community but they want to explore how Python-based frameworks can continue to grow closer
+- [Emma] probably will submit an abstract to Pycon (deadline coming soon!)
+
+### Action items
+
+- Go through the list of approved pull requests
+- PR #4209 from Lars: Emma will review to check if the ordering of pixels is ok
+  and doesn't change the expected behaviour of the algorithm.
+
