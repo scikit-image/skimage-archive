@@ -1,0 +1,42 @@
+# scikit-image meeting 2019-12-09
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Stéfan, Emma, Juan, Axel
+
+## Items from the previous meeting
+- **DONE** Juan to grant Emma (and others) access to tiny ~~piwik~~ matomo instance
+    - Alternatives: [matomo](https://matomo.org/), [Open Web Analytics](http://www.openwebanalytics.com/), [AWStats](http://www.awstats.org/), [Fathom Lite](https://github.com/usefathom/fathom)
+    - Just asked Emma for public key, but using free hosted trial for next 21 days. (See #4345) 
+    - Connect to your Matomo at: https://scikit-image.matomo.cloud
+- **pending** Juan to track down API updates issue for RAGs [#397](https://github.com/scikit-image/scikit-image/pull/397) and comment there
+- **DONE** Alex to close #518 with nice message. =)
+    - Alex to address https://github.com/scikit-image/scikit-image/pull/518#issuecomment-558418468
+- **DONE** Alex to close 663 AND 1053 with message explaining that if anyone wants to pick it up to push it over the line, they should do so.
+- **pending** Alex to share big 3D fiber segmentation dataset
+- **pending** Write PR to add pyproject.toml back to project.
+    - See discussion at https://github.com/scikit-image/scikit-image/issues/4261 and PR at https://github.com/scikit-image/scikit-image-wheels/pull/34
+    - Juan: Just had pip fail badly when trying to install in env without Cython. New pip doesn't do a great job of surfacing error messages from setup.py so it's not a great experience.
+
+## Agenda
+- regionprops_table example [#4346](https://github.com/scikit-image/scikit-image/pull/4346)
+- Quickshift tree [#4151](https://github.com/scikit-image/scikit-image/pull/4151) Outcome: ask contributor for more time to review.
+- nD Sobel/Scharr/Prewitt/...Farid? [#4347](https://github.com/scikit-image/scikit-image/pull/4347) Outcome: Change border behaviour as a bug
+- [nD windows (#4252)](https://github.com/scikit-image/scikit-image/pull/4252)
+- list of PRs with one approving review: https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved
+- Binder links added to dev only by javascript (so no Binder links on stable releases for now)
+
+## action items
+
+- **DONE** Juan to remove Sobel etc border handling as buggy behaviour
+- Juan to add Emma to skimage-piwik instance
+- Juan to update contributor in #4151. Emma to review... Eventually.
+- Stéfan to update CONTRIBUTORS.txt with method to extract them from git log
+- Alex to address https://github.com/scikit-image/scikit-image/pull/518#issuecomment-558418468
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
+
+
