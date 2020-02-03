@@ -1,0 +1,34 @@
+# scikit-image meeting 2020-01-31
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: François, Lars, Emma
+
+## Minutes
+
+### Upcoming release
+
+- PRs involving deprecations should be prioritized so that we do not lose a
+  release cycle for planned deprecations. An "involves deprecation" label for
+  PRs has been created for this purpose.
+- Priority features to merge before the release: Pooch
+
+### RGsoc projects
+
+Ideas of good projects for beginners: 
+- a couple of open PRs could be merged with a moderate effort if taken over
+ (for example #3590 or #3773). This could represent a good mentor / mentee work which has huge chances to result in work which is merged.
+- scikit-image equivalent of the recent "numpy for absolute beginners" tutorial
+ 
+
+### Upcoming conferences and workshops
+
+- [François] Looking for team mates to submit a scikit-image tutorial to
+  Euroscipy (late July in Bilbao!), Lars will probably participate, others
+  welcome to join! 
+- [Emma] Pycon abstract accepted!
+
+### Other items
+
+Should we still support 32-bit architectures? A SKIP issue #4430 has been
+opened to discuss it.
