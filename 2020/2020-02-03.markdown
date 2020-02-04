@@ -1,0 +1,30 @@
+# scikit-image Pacific meeting 2020-02-03
+
+Present: Juan, Alex, Stéfan
+
+## Items from the previous meeting
+
+
+## Agenda
+
+- Possible projects for RGSoC
+    - Projects small enough and simple enough for 2 beginner students working for ~8 weeks.
+    - sparse kernel correlations. See [requested features list](https://github.com/scikit-image/scikit-image/wiki/Requested-features)
+    - FFT-related algorithms. Might be good for scientists who have good understanding of FFTs but need coding practice.
+    - [Simplify the code import graph](https://github.com/scikit-image/scikit-image/issues/3397), including visualising the import graph, and graph simplification/cuts
+- Volunteers for RGSoC mentorship
+    - Juan
+    - Emma
+    - Alex
+- [Affine image registration API](https://github.com/scikit-image/scikit-image/pull/3544)
+    - Problem: only *some* of our transform classes will work (those that represent affine transforms)
+    - But, using warp is a problem because it swaps coordinate axes.
+- Region adjacency graph API + move to segmentation
+    - [PEP 562](https://snarky.ca/lazy-importing-in-python-3-7/)
+    - [Tripwire](https://nipy.org/nibabel/reference/nibabel.tripwire.html)
+    - [lazy-import](https://pypi.org/project/lazy-import/)
+- [PRs with one approving review](https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved)
+
+## action items
+- Come up with more ideas for RGSoC
+- Stéfan to review 3544 (again =P)
