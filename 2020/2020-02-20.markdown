@@ -1,0 +1,74 @@
+# scikit-image meeting 2020-02-17
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Mark, Talley, Alex, Juan
+
+## Items from the previous meeting
+- Come up with ideas for RGSoC  **DONE** Project submitted to RGSoC
+- Stéfan to review 3544
+- Region adjacency graph API + move to segmentation  (in progress at [#4444](https://github.com/scikit-image/scikit-image/pull/4444))
+
+## Agenda
+- Discussion about scikit-image 1.0
+    - Proposal: warn users for a few releases to pin to 0.X, and break backward compatibility
+        - draw: ND compatible, using tuples instead of (r, c)
+        - segmentation algorithms are likely incompatible: returning 0 and returning 1
+    - Pre-release so that people can play around with things
+    - No backports to 0.X
+    - Mark (hmaarrfk): Might be too big of a change, and might suck up all the time.
+    - 
+    - regionprops returning a list instead of a dictionary
+    - Alex: 
+        - Standardization for deprecation process. We are "sorta adhoc". Decorators can help
+            - Mark: error messages might become harder to interpret.
+            - Mark: a decorator that becomes a no-op might help.
+        - Parameter names, more or less in the lines of what Tally said.
+        - 
+    - Tally: argument names standardization could allow introspection tools like: "Magic GUI"
+    - **Action Item**: Mark show an example PR of how a deprecator can be left in place even after the version has changed.
+        - In terms of integration with Napari, we would be able to use this standardization to make power GUIs
+- Discussion about code refactor to fix import structure (see [comment](https://github.com/scikit-image/scikit-image/pull/4400#issuecomment-585538117))
+    - Alex: Likes the idea.
+        - Thinks documentation can help teach people where to put things.
+    - Mark: Affraid about discoverability for contributors
+        - Similar filenames for similar functionality are a concern. Are we going back to .h and .c files....
+    - JNI: wants to improve tracebacks. Benefits to tracebacks could trump all other concerns.
+        - **Action Item**: JNI Example PR that shows how the `_` modules can be used to avoid ultra long and confusing PRs.
+
+- [PRs with one approving review](https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved)
+- Please help Alex reviewing (or closing) [#4065](https://github.com/scikit-image/scikit-image/pull/4065) [#4096](https://github.com/scikit-image/scikit-image/pull/4096)
+
+## Scikit-Image Value proposition
+- 3D+ images.
+- Using RGB image by default
+- Easier to use python-bindings,
+    - Discoverability
+
+## Desires for 1.0
+
+- Scikit-learn like level of consistency of API
+    - Might not be acheivable for scikit-image due to the fact that images are much more varried 
+-  scikit-image/scikit-image-experiments is likely the place to demo 1.0
+    -  Would be nice to make this installable on pypi, so that contributors could "test" quickly
+    -  Maybe not call it skimage2, but skimage_exp so it doesn't look good, and we will be forced to go back to skimage when it is all done.
+    -  towncrier??? see numpy
+    -  build wheels from master
+    -  versioneer: synchronizing git tags is a pain and can cause out of sync stuff.
+        -  Probably best to create a version file, instead of interacting with git
+-  skimage-contrib is probably not super useful until we standardize the API
+
+## Questions:
+
+- Alex: How are we using version numbers:
+    - Juan: Semantic version, kinda.
+
+## Action items
+
+- **Action Item**: Mark show an example PR of how a deprecator can be left in place even after the version has changed.
+- **Action Item**: JNI Example PR that shows how the `_` modules can be used to avoid ultra long and confusing PRs.
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
