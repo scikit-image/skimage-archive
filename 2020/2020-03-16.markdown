@@ -1,0 +1,86 @@
+# scikit-image community meeting, 2020-03-16
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+
+Present: Alex, Axel, Emma, Juan, Mark
+
+## Items from the previous meeting
+
+- Stéfan to review 3544
+- JNI Example PR that shows how the `_` modules can be used to avoid ultra long and confusing tracebacks.
+
+## Agenda
+
+- scikit-image 1.0 proposal https://mail.python.org/archives/list/scikit-image@python.org/thread/WUWDT3TBEJNPC6I3ZLXHXI3B4EU7JULV/
+    - Maybe we need to use `import skimage1` or `skimage2` — Alex: please don't. We mischaracterize the project doing that. Thorough documentation and preparation should solve this issue. More than that, `skimage1` for 0.x versions, `skimage2` for 1.x ones ...?
+    - First step: get as far as we can without breaking changes
+    - Mark requests:
+| Input dtype | Value | Out: uint8 | Out uint16 | Out float32 | Out float64 |
+| ----------- | ----- | ---------- | ---------- | ----------- | ----------- |
+| uint8       | 0     | 0          | 0          | 0           | 0           |
+| uint8       | 50    | 50         | 50         | 50.0        | 50.0        |
+| float32     | 0     | 0          | 0          | 0           | 0           |
+| float32     | 50.0  | 50         | 50         | 50.0        | 50.0        |
+| float32     | 256.0 | 0          | 256        | 256.0       | 256.0       |
+|             |       |            |            |             |             |
+|             |       |            |            |             |             |
+        - A big table outlining the different unit conversions.
+            - What does "C" do.
+            - What does "Python" do
+            - What does "scikit-image" do
+            - What does "numpy" do
+        - Add an entry for boolean inputs.
+        - Add a transition guide: if you relied on rescaling behaviour, how do you get it back in 1.0?
+- phase shift in case of equal errors: https://github.com/scikit-image/scikit-image/issues/4500
+- new name for `register_translation`: 
+    - https://github.com/scikit-image/scikit-image/pull/4502
+    - Mark: this seems a little frivolous
+    - Juan: Seems like it was hard to find.
+    - Alex: `register.phase_correlation` is the way to go — considering also `register.phase_shift`
+    - Emma: maybe think of `register(image1, image2, mode='phase correlation')`
+        - Juan: seems a little hard to explain, especially with different parameters for each `mode`
+- range of Lab space in skimage is a bit weird...? https://github.com/scikit-image/scikit-image/issues/4506
+- Should we automatically convert bool images to int when saving? https://github.com/scikit-image/scikit-image/pull/4512
+    - Alex: generally, we don't want to be converting between dtypes automatically. bool -> something else. Could be 1 for float, could be 
+    - Mark: Zarr bool + zip: https://github.com/pydata/xarray/issues/3815
+        - FiJi Support?
+        - [Matlab Support being discussed](https://github.com/zarr-developers/community/issues/16)
+    - PIL can return the color index of the image. So when you have an indexed image, you can get the "indexing table" and not the "color representation"
+    - Relevant twitter thread about zarr format: https://twitter.com/preibischs/status/1230854760514887680 (though twitter threading is broken so you might have to click around a bunch for all the relevant discussions)
+    - **Bool images exist.**
+    - Need to find a way to reliably round trip between bool images.
+        - Color pallets might be imposed
+- What to do with pooch?
+    - Do we stop shipping classic datasets eventually?
+        - Mark: V 1.6
+    - Emma: Download all should probably do what it says.
+        - Downloading individual datasets, should probably be done 
+        
+          - `from skimage import data`
+          - `data.schizonts()`
+
+        - Scikit-image can probably host a website?
+        - What happened to the open science datasets? Maybe we only want to use "published" datasets 
+
+        - Where to host skimage['data']?
+            - GitLab repo size limit: 5GB to 10GB
+            - Public and private repositories: unlimited
+            - Don't have a transfer limit
+            - Include unlimited collaborators.
+            - [Announcing post](https://about.gitlab.com/blog/2015/04/08/gitlab-dot-com-storage-limit-raised-to-10gb-per-repo/)
+
+## Questions
+
+
+
+## Action items
+
+- Create issue for putting datasets on a github pages
+- Create issue for contributing guide: how to create an example using an externally-hosted dataset. Also, how to upload a dataset e.g. to GitLab.
+- Create issue + mailing list post about register_translation.
+- 
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
