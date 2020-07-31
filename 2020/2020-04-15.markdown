@@ -1,0 +1,41 @@
+# scikit-image community meeting, 2020-04-15
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+
+Present: François, Lars, Stéfan, Emma (and Alex at the end)
+
+
+## Agenda
+
+- pre-release checklist:
+    - [#4496](https://github.com/scikit-image/scikit-image/pull/4496), bug with
+      h_minima/h_maxima 
+    - [#3850](https://github.com/scikit-image/scikit-image/pull/3850) SLIC with
+      mask
+    - [skeletonize_3d produces a zero array in certain conditions](https://github.com/scikit-image/scikit-image/pull/3757)
+    - what could be done to [simplify the release process](https://github.com/scikit-image/scikit-image/issues/4544)?
+- feedback on rotating charge of repo follow-up. Very positive feedback from
+  everybody who gave it a try, nice to be able to follow-up during a whole
+  week. On average it takes between half an hour to an hour every day. It may
+  of course vary depending on the activity of the week.
+- bug report: [#4583](https://github.com/scikit-image/scikit-image/issues/4583) should rescale intensity always return out_range dtype? @jni thinks yes. Currently it returns an image in the input dtype! Several comments were added to the issue.
+- decide between `selem`, `footprint`, `structure` or `neighborhood`, or `kernel` as parameter name for the structuring element, see [#4154](https://github.com/scikit-image/scikit-image/issues/4154) and [#4581](https://github.com/scikit-image/scikit-image/issues/4581). 
+    - Several comments were added to
+      [#4154](https://github.com/scikit-image/scikit-image/issues/4154). It
+seems that `selem` (which we widely use in `morphology`) is not very popular.
+- current CI failure: any idea what's going on? 
+    - all Py3.7, segmentation faults / access violations after, during `segmentation/tests/test_felzenszwalb.py::test_grey` [example log](https://dev.azure.com/scikit-image/scikit-image/_build/results?buildId=2956&view=logs&j=334af232-6109-57b9-b294-3cb1e881b307&t=39339382-c83a-5968-2bb4-5c9c395c8d0a&l=5295)?
+        - Looks like it's caused by the pre-install of Cython 3.0a1
+
+
+## Action items
+
+- Dig in link between alpha release of Cython and CI failure
+- Check on status of Azure pipelines with Egor: is our testing well split between this and AppVeyor?  Are we using all our parallel workers with the different services optimally to ensure short builds?
+- Plan release, address items of the checklist above with high priority
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
