@@ -1,0 +1,48 @@
+# scikit-image Atlantic meeting 2020-07-31
+
+Starting time: 9:00 AM (CEST, Paris)
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Louis, Greg, François, Lars, Egor, Juan, Emma
+
+
+## Items from the previous meeting
+
+- See [scikit-image/meeting-notes](https://github.com/scikit-image/meeting-notes).
+
+
+## Agenda
+
+- feedback from the Scipy sprint
+    - make sure next sprint that the spreadsheet info is available to everyone; apparently the sprints spreadsheet was only available to organisers!
+    - add flag to sprint PR
+    - try using Discord --- recommended by sklearn folks. Includes both chat and video breakout rooms
+    - Add banner on website for next sprint (+ link to contributing page)
+    - Add notes on how to get started with Cython in contributing guide.
+- how to use ASV benchmarks better (should this be part of the weekly report?)
+    - @jni: it definitely should be!!!
+    - server is still up at https://pandas.pydata.org/speed/scikit-image but something seems broken
+    - pull request should be covered as well, @jni explored using meeseeksDev, see https://github.com/scikit-image/scikit-image/issues/3342
+- new CZI proposal led by Greg (deadline Aug 4)
+- use of type annotations (PR https://github.com/scikit-image/scikit-image/issues/4794) + https://github.com/scikit-image/scikit-image/issues/4869
+    - (No time to discuss but please review PRs)
+- convenient documentation CI (https://github.com/scikit-image/scikit-image/issues/2269, tangentially https://github.com/scikit-image/scikit-image/issues/458, https://github.com/scikit-image/scikit-image/pull/2720)
+    - Nelle working on #2720 (CircleCI) but may not have time
+    - GH Actions easy to set up but unsure if viable to serve HTML pages served by GitHub Actions.
+    - Having a zipped bundle of the doc to download would already by an improvement.
+    - Overkill(?): CircleCI + Appveyor + Azure + GitHub Actions
+    - Task for potential DevOps contractor (simplify CI), especially an expert
+- Scikit-image Roadmap? (The CZI proposal asks how the proposed work fits into our roadmap). We have a mission statemnt SKIP here: https://scikit-image.org/docs/stable/skips/2-values.html
+    - 'living' roadmap (links to issues e.g. performance, documentation) which can still be used later
+- Matomo discussed (to put on grant) 
+- Other sources of funding after CZI: Moore & Sloane, NIH, EU/ERC
+    - Create a repo with common materials for applications
+- [if enough time...] Pillow security issue: https://github.com/scikit-image/scikit-image/pull/4861 Not enough time to discuss.
+
+
+
+---
+
+After the meeting, please commit the contents of this document into the [meeting notes](https://github.com/scikit-image/meeting-notes) repo. Then clear out this document so that it can be re-used for the next meeting.
+
