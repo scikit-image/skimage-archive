@@ -33,12 +33,12 @@ Present: Louis, Greg, François, Lars, Egor, Juan, Emma
     - Having a zipped bundle of the doc to download would already by an improvement.
     - Overkill(?): CircleCI + Appveyor + Azure + GitHub Actions
     - Task for potential DevOps contractor (simplify CI), especially an expert
-- Scikit-image Roadmap? (The CZI proposal asks how the proposed work fits into our roadmap). We have a mission statemnt SKIP here: https://scikit-image.org/docs/stable/skips/2-values.html
+- Scikit-image Roadmap? (The CZI proposal asks how the proposed work fits into our roadmap). We have a mission statement SKIP here: https://scikit-image.org/docs/stable/skips/2-values.html
     - 'living' roadmap (links to issues e.g. performance, documentation) which can still be used later
 - Matomo discussed (to put on grant) 
-- Other sources of funding after CZI: Moore & Sloane, NIH, EU/ERC
+- Other sources of funding after CZI: Moore & Sloan, NIH, EU/ERC
     - Create a repo with common materials for applications
-- [if enough time...] Pillow security issue: https://github.com/scikit-image/scikit-image/pull/4861 Not enough time to discuss.
+- [time allowing...] Pillow security issue: https://github.com/scikit-image/scikit-image/pull/4861 Not enough time to discuss.
 
 
 
