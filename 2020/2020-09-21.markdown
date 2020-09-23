@@ -1,0 +1,39 @@
+# scikit-image meeting 2020-09-21
+
+Starting time: 2:00 PM (CEST, Paris)
+
+Join via [Zoom](https://monash.zoom.us/j/284282585)
+
+Present: Emma, Juan, Lars, François, Gregory, Alex
+
+
+## Items from the previous meeting
+
+- [ ] Emma: apply the suggestions to benchmarks in 3D rank filters; Juan to merge.
+- [ ] Juan, Emma: 4444 move RAG to segmentation
+- [ ] Emma and Greg: review optical flow PR #4161
+- [x] Juan: look up upscaling Deep Neural Nets for cameraman image. #4913 (start here: https://youtu.be/HvH0b9K_Iro; bigjpg.com -> https://cdn-ossd.zipjpg.com/free/48e2f5ad9bfffcfaaf5c62e33f0dd49a_1_-1_photo.png)  **DONE by Alex**
+- [ ] Juan: look up pivchallenge authors and whether they will release two images as CC0.
+- [ ] Juan: recap https://github.com/scikit-image/scikit-image/pull/4087 how to do multichannel for regionprops (linked to `channel_axis` future API in order to replace `multichannel`)
+- [ ] Juan: work on final names https://github.com/scikit-image/scikit-image/pull/4951#discussion_r487472490
+- [x] Emma: make our plausible.io stats public: https://docs.plausible.io/visibility/ Done https://plausible.io/scikit-image.org should be public now
+- [ ] François: write doc paragraph about 'download_all`
+- [ ] François: if needed, look for CC0 PIV images
+- [ ] Lars: try to look at a few pending PRs for the release: [#4380](https://github.com/scikit-image/scikit-image/pull/4380), look for PIV images (CC0, see [#4161](https://github.com/scikit-image/scikit-image/pull/4161))
+  (Post release) Rolling ball algorithm review, boundary tracing, 
+
+
+## Agenda and items discussed during the meeting
+
+- remaining PRs for 0.18 https://github.com/scikit-image/scikit-image/pulls?q=is%3Aopen+is%3Apr+milestone%3A0.18
+    - How to implement multichannel regionprops? https://github.com/scikit-image/scikit-image/pull/4087
+    - 3D rank filters: waiting on some small suggestions from Greg, possibly we should just take them over. https://github.com/scikit-image/scikit-image/pull/4435#pullrequestreview-488111748
+    - Euler number / Crofton perimeter: this is ready. https://github.com/scikit-image/scikit-image/pull/4380
+    - Blind deconv: looks like it needs some work! https://github.com/scikit-image/scikit-image/pull/4717#issuecomment-659314208
+    - Trainable segmentation: reviewed by several devs and modified accordingly, needs final (?) review https://github.com/scikit-image/scikit-image/pull/4739
+    - Optical flow algorithm: review required + need to check our data policy https://github.com/scikit-image/scikit-image/pull/4161 (discussed during the meeting: ok to download the images for the gallery example)
+    - Camera man 
+- short demo of plausible.io analytics
+- Names of datasets https://github.com/scikit-image/scikit-image/pull/4951#discussion_r487472490
+- Improve our TODOs? add link to original PR, add a draft PR so that it would be more visible (but there will be merge conflicts), or use issues with a milestone
+- if time: discuss type annotations (no time for this item)
