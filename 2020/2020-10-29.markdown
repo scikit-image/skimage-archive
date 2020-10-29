@@ -1,0 +1,33 @@
+# scikit-image meeting 2020-10-29
+
+Start time: 11:00 AM (CEST, Paris)
+
+Zoom link: https://monash.zoom.us/j/88055547793?pwd=QTlSWHoxbWkzRGJwK3pxMkFNN3ViQT09
+
+Present: Almar, Egor, Emma, Juan, Marianne, and an anonymous participant
+
+
+## Items from the previous meeting
+
+- [x] Juan: Look up pivchallenge authors and whether they will release two images as CC0. Mail sent.
+- [x] Juan: Recap https://github.com/scikit-image/scikit-image/pull/4087 how to do multichannel for regionprops (linked to `channel_axis` future API in order to replace `multichannel`).
+- [x] Juan: Work on final names (https://github.com/scikit-image/scikit-image/pull/4951#discussion_r487472490).
+
+## Agenda and items discussed during the meeting
+
+- Merged PR #5037.
+- Move boundary tracing PR #4853 post-release.
+- Remove blind deconv PRs from 0.18 milestone (WIP, issues at the [algorithm level](https://github.com/scikit-image/scikit-image/pull/4717#issuecomment-659314208), #4717 being revival of #3524).
+- Decide on names for datasets: we are happy enough with the current state of PR #4951, so let's merge!
+- Go over remaining PRs for 0.18: https://github.com/scikit-image/scikit-image/pulls?q=is%3Aopen+is%3Apr+milestone%3A0.18
+- imageio and scikit-image
+    - imread: [discussion](https://github.com/scikit-image/scikit-image/issues/5036)
+    - metadata: maybe interact with [IME community](https://forum.image.sc/t/upcoming-calls-on-next-gen-bioimaging-data-tools-starting-oct-29/43489)
+
+## Action items
+
+- [ ] Juan: follow up on CC0 release of pivchallenge images.
+- [ ] Juan, Emma: #4444 move RAG to segmentation. Move post-release.
+- [ ] Emma: Final review of rolling ball PR #4851 (we want it in 0.18).
+- [ ] Marianne: Review PR #4828 (CLAHE) for clip value 1.0.
+- [ ] All: Follow discussions about skimage.io on the [imageio](https://github.com/imageio/imageio) side as well.
