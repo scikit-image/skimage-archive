@@ -22,12 +22,12 @@ Present: Almar, Egor, Emma, Juan, Marianne, and an anonymous participant
 - Go over remaining PRs for 0.18: https://github.com/scikit-image/scikit-image/pulls?q=is%3Aopen+is%3Apr+milestone%3A0.18
 - imageio and scikit-image
     - imread: [discussion](https://github.com/scikit-image/scikit-image/issues/5036)
-    - metadata: maybe interact with [IME community](https://forum.image.sc/t/upcoming-calls-on-next-gen-bioimaging-data-tools-starting-oct-29/43489)
+    - metadata: maybe interact with [OME community](https://forum.image.sc/t/upcoming-calls-on-next-gen-bioimaging-data-tools-starting-oct-29/43489)
 
 ## Action items
 
-- [ ] Juan: follow up on CC0 release of pivchallenge images.
+- [x] Juan: follow up on CC0 release of pivchallenge images.
 - [ ] Juan, Emma: #4444 move RAG to segmentation. Move post-release.
-- [ ] Emma: Final review of rolling ball PR #4851 (we want it in 0.18).
-- [ ] Marianne: Review PR #4828 (CLAHE) for clip value 1.0.
+- [x] Emma: Final review of rolling ball PR #4851 (we want it in 0.18).
+- [x] Marianne: Review PR #4828 (CLAHE) for clip value 1.0.
 - [ ] All: Follow discussions about skimage.io on the [imageio](https://github.com/imageio/imageio) side as well.
