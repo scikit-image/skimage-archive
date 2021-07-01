@@ -5,6 +5,7 @@ issue: https://github.com/scikit-image/scikit-image/issues/5439
 ## 1. Europe/Asia
 
 Present: Marianne, Juan
+
 Meeting date: 2021-07-01 at 10:00 CEST
 
 - Juan likes Marianne's proposal to add channel_axis to functions that assume final channel axis: https://github.com/scikit-image/scikit-image/issues/5439#issuecomment-867547754
@@ -38,10 +39,72 @@ Meeting date: 2021-07-01 at 10:00 CEST
 
 ## 2. US/Europe
 
-Present: Marianne,
+Present: Marianne, Mark
+
 Meeting date: 2021-07-01 at 09:00 EDT
 
-- 
+- Metadata:
+    - Still a big issue. Probably not for us :D.
+- Marianne explains: 
+    - 0.19 release is "normal",
+    - 0.20 is "dummy" in the sense that it is the same as 0.19, but with the dependency warning ("use `skimage<0.20.0` if you don't want to update your code, otherwise follow this migration guide").
+        - Gives users a migration guide.
+        - At first, migration guide is not "comprehensive" because it cannot anticipate all the challenges that users will encounter.
+    - Mark: How can we be **dynamic** with the comprehensive guide?
+        - Marianne: We will need to move quite fast.
+        - Mark: My last attempt at improving a guide (i.e., the install guide), was in my mind "better" at some point, but never perfect. I felt like it took too long to become "public" when somebody else had the bandwidth to improve it even more.
+        - Mark: Can we use the wiki, to stage?
+            - Ask community to open issues with suggestions if they can't edit?
+            - Can the community contribute to the Wiki?
+    - Mark: One big challenge I see the 'less than' specifier is basically going to kill people's software in 2 years.
+        - Marianne: An other way to put this is that "0.19.X" is not a sustainable choice.
+    - Mark:
+        - Detecting `pip` vs `conda`, different installers will have different requirements.
+    - Mark: Should the migration guide should include best practices for: debian? red-hat?
+        - Ubuntu 21.04 I can install scikit-image 0.18.1
+        - `@olebole` packages scikit-image quite quickly for "debian"
+            - Which version do we recommend that they use?
+            - Example of packaging issues they raise:
+                - https://github.com/scikit-image/scikit-image/issues/4366
+            - They reaised issues about the dynamically downloaded files that we had to move out of the repo due to size.
+    - Mark:
+        - Can we create `from skimage.v0 import X` to allow people to stick to the old version without warnings?
+        - Marianne: isn't this `skimage1` and `skimage2` proposal?
+            - Mark: I don't think so, since it is the same package. 
+                - We only have to maintain 1 infrastructure. 
+                - We can copy all the tests over, and ensure that they continue to work.
+            - Marianne: don't we have to deal with breaking changes?
+                - Can we can slow down functions? Maybe we can guarantee correctness, but not performance for `skimage.v0`.
+            - Marianne: The change with `preserve_range` in Gaussian and other filters is not just performance, it's breaking. 
+    - Mark: Is there an option for writing code that works for V1.0 and V0.19?
+        - Ideal: find the scale of the impact of scikit-image https://github.com/mamba-org/mamba 
+    - Marianne: Parallel between **Python2 to Python3**
+        - Unicode literals were a game changer in the migration. People were able to write "python 3 style" but users of python 2 were able to use the code too.
+        - Numpy had `numpy.compat` for a VERY long time.
+            - They still do, due to the fact that things change within python 3.5 -> 3.6 ... -> 3.9.
+
+    - Mark: ideas:
+        - Crawl through pypi and identify all dependencies on skimage.
+        - Crawl through conda and identify all dependencies on skimage
+        - Marianne: see https://github.com/scikit-image/boilerplate-utils/pull/4
+
+    - Who should use 0.19.0?
+        - People that don't depend on skimage in **their** code
+            - Consider users of a package like https://cellprofiler.org/
+            - They would want to use 0.19.0 while cellprofiler updates.
+        - Researchers running Jupyter notebooks with results published within 2 years.
+    - Who should use 0.20.0?
+        - Maintainers of https://cellprofiler.org/
+        - People who have CI system infrastructure?
+    - Scikit-image user story:
+        - Mark: We maintain a package that depends on scikit-image.
+            - Do we use the new 1.0 API?
+            - Do we stay with the 0.19 API?
+        - Mark: Honestly, I don't care, whatever my **users** want. I don't drive this decision.
+            - I need to be compatible with both.
+        - Personal solution:
+            - We (Mark's company) would be forced to create a compatiblity layer.
+            - We (Mark's company) would be forced to reconsider the scikit-image dependency <--- this is a problem for scikit-image
 
 ## immediate todos
 
