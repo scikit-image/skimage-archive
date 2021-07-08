@@ -1,6 +1,6 @@
 # skimage 1.0 API changes notes
 
-issue: https://github.com/scikit-image/scikit-image/issues/5439
+[Meta-issue](https://github.com/scikit-image/scikit-image/issues/5439)
 
 ## 1. Europe/Asia
 
@@ -8,7 +8,7 @@ Present: Marianne, Juan
 
 Meeting date: 2021-07-01 at 10:00 CEST
 
-- Juan likes Marianne's proposal to add channel_axis to functions that assume final channel axis: https://github.com/scikit-image/scikit-image/issues/5439#issuecomment-867547754
+- Juan likes Marianne's proposal to add `channel_axis` to functions that assume final channel axis: https://github.com/scikit-image/scikit-image/issues/5439#issuecomment-867547754
 
 - Marianne agrees with preserve_range default + documentation about exposure.rescale_intensity. img_as_float & co should go to `.astype(float)` + rescale_intensity. [#3373](https://github.com/scikit-image/scikit-image/issues/3373) can be decided on a case-by-case basis. Worst case, range can be introspected, even if slow.
 
@@ -61,7 +61,7 @@ Meeting date: 2021-07-01 at 09:00 EDT
     - Mark:
         - Detecting `pip` vs `conda`, different installers will have different requirements.
     - Mark: Should the migration guide should include best practices for: debian? red-hat?
-        - Ubuntu 21.04 I can install scikit-image 0.18.1
+        - Ubuntu 21.04 I can install Scikit-image 0.18.1
         - `@olebole` packages scikit-image quite quickly for "debian"
             - Which version do we recommend that they use?
             - Example of packaging issues they raise:
@@ -106,9 +106,158 @@ Meeting date: 2021-07-01 at 09:00 EDT
             - We (Mark's company) would be forced to create a compatiblity layer.
             - We (Mark's company) would be forced to reconsider the scikit-image dependency <--- this is a problem for scikit-image
 
+## 3. US/Pacific — jul 07, 2021
+
+Present: Greg, Stéfan, Juan, Mark, Alex
+
+* Module deprecations
+
+  - `skimage.viewer`: consensus on call that it should be deprecated
+    - tutorial examples should be ported to Napari (magicGUI) or matplotlib
+    - can improve deprecation warnings: docstring in module, warning when importing module
+  - imageio:
+      - ImageCollectionReader: useful to process 2k files. You can instantiate the collection without any cost.
+          - Handles wildcard.
+          - You can change caching to be on or off.
+      - Juan:
+          - It is quite complex, and the issue with multiple 
+      - Look at if imageio bundles tiffile and if they have an ancient version.
+          - tifffile has become SO MUCH easier.
+          - They do seem to bundling the version from 2018
+              - https://github.com/imageio/imageio/blob/master/imageio/plugins/_tifffile.py#L78
+              - https://github.com/imageio/imageio/issues/437
+          - Push for just using tifffile straight. It is a pure python dependency that just depends on numpy as of recent versions.
+      - imageio should not be optional.
+      - Should ensure that we depend on the most important imageio plugins.
+
+* Function / module moves
+  - RAG:
+      - Juan stalled moving it out of `future`. And realized that there was a bug, and maybe there is a BUG?
+  - Getting rid of future?
+      - Stefan: Things seem to get stuck a little bit.
+      - Juan: they don't have to.
+          - If we want to get rid of deprecations and become fully stable, then future is the only place where we can be stable.
+      - Stefan: the intent is to move things from future to stable.
+      - Maybe consider renaming it `experimental`?
+
+* Parameter removal
+  - Removing `preserve_range`:
+      - Some code bases have it, and some will not be using it.
+      - A 6 version transition to remove the parameter.
+          - Currently the default is False. Need to make it True, so we need to give warnings.
+          - Then removing it will take 2 remove it.
+      - It will be noisy forever if we take the standard deprecation cycle.
+      - A global switch is probably ok, but not OK.
+      - Tensorflow did compat.v1 the problem, we would be dragging the newer version and we would have some problems.
+          - How would the previous code interact with the newer code?
+          - We would have double the API.
+          - Juan: maybe we don't, maybe it is a complete silo.
+              - People can do skimage.v0.alskdjf
+              - And people can migrate at their own pace.
+      - How is this going to work with matplotlib?
+          - Currently, the problem is that RGB images fail when they aren't between `[0, 1]`.
+          - Tom was willing to move forward.
+          - Generally, performance optimizations can be explained in a migration guide.
+      - How to save floating point images between `[0., 255.]`
+          - If the plugin requries uint8 then it will be seamless.
+          - Ask users to manually rescale.
+      - A link to a transition guide is nice.
+          - Maybe link to GitHub issue / discussion / **wiki** page?
+          - Mark introduced a parameter `_stacklevelincrement` can be used to have the caller control wher ethe warning appears.
+      - Related transpositing coordinates is super slow if we try to go the
+      - Mark; If the problem gets big enough, then we will create `skimage_compat.v0` and `skimage_compat.v1` ourselves
+      - Stefan: how big of a pain was the LTS?
+          - Juan thought it was not so horrible???
+          - Maybe do v0.19 
+          - Mark: thinks it was alot of work.
+              - But maybe not as bad all in all.
+  - Juan:
+      - Write a SKIP for one shot API changes for reaching out to the broader community.
+      - General idea:
+          - Release 0.19 "LTS"
+              - Release notes should explain 0.20 scheme, upcoming change in API,  and suggest pinning
+              - Documentation for 1.0 should also emphasize the API change
+              - Website should advertise 1.0 API change
+          - Release 0.20, same as 0.20 but with a big giant warning to pin.
+              - Released day after 0.19.
+                - Warns to pin to `!=0.19`
+                    - Should we use a print statement instead of a warning to ensure it appears?
+                    - We should ensure that we don't print when the ``stdout`` doesn't exist.
+                        - S: We have a custom warning class; think we can force that to always appear (will appear at least once?)
+                - 0.19 does not receive updates; should be made clear to users
+                - Make clear to distributions *not* to package this version
+              - Point to the migration guide? (yes, in both releases)
+              - Stefan:
+                  - Do we backport bugfixes here?
+                  - Juan: maybe, but seems to have minimal value.
+          - Release 1.0.0.rcX frequently?
+          - Release 1.0 when we are ready.
+      - Alex:
+          - We are catering after 5 different groups.
+          - Very likely many of these people will be using scikit-image 1.0.
+          - Maybe we don't 
+      - Mark:
+          - Can we add a decorator ``@parameter_removed("1.0", "preserve_range")``
+              - We have something similar for deprecations
+          - And link to the migration guide? EVERYWHERE
+      - migration guide:
+          - General Migration Guide Issue:
+          - discussion: Targetted issue
+          - Doc page (a bit tricky with getting the URL ahead of time---point to dev, or released ver? can be auto-generated with a function that looks at `__version__`)
+              - We do have these permenant page?
+              - We can upgrade webpages to build markdown.
+          - Github **wiki** page
+              - Mark likes this
+              - S: could work fine, we just need a standard "url scheme"
+  - Stefan:
+      - Can we bundle a few API changes?
+      - Juan: Yes the goal is the bundle all API changes into 1.
+
+* Extra information API discussion needs to happen at some point
+
+- NumPy vs. SciPy vs. ¡scikit-learn! ¡tensorflow! ¡pytorch!
+    - Boundary modes: for 1.0 we could consider matching ndimage instead of NumPy
+    - Parallel: workers/n_cpus/n_jobs/processes
+    - Mark: is this really important, at one point just: RTM (Read The Manual)
+    - For some of these, we should coordinate with the community (see [SPECS](https://scientific-python.org/specs/))
+
+* Parameter/function renaming
+ - Alex does not like "segmentation" for labels
+ - S: agreed, labels are pretty widely understood, and segmentation seem more topic-specific
+
+* Protocols
+  - [PEP 544](https://www.python.org/dev/peps/pep-0544/)
+  - Should we group functions according to protocol?
+    `skimage.filters.threshold.*`
+    `skimage.filters.*other random funcs*
+  - A bigger transition than most others discussed so far; will require fairly incisive search/replacing to upgrade
+
+* Metadata
+  - Structured logging mechanism
+    ```python
+    log = skimage.log()
+    
+    out = any_function(*args, **kwargs)
+    extra = log[-1]
+    ```
+  - `out, extra = any_function(*args, **kwargs)` with `extra` being a dictionary (whose keys we can type)
+  - `out, extra = any_function.extra(*args, **kwargs)` vs `out = any_function(*args, **kwargs)` (Gaël offers to say "no" to that); it does feel a bit magical and definitely not common
+  - `out, extra = extra(any_function)(*args, **kwargs)`
+  - `out, extra = extra.any_function(*args, **kwargs)`
+  - `out, extra = any_function_extra(*args, **kwargs)`
+  - S: [Doable with typing, btw](https://docs.python.org/3/library/typing.html#typing.overload):
+  - `out, extra = any_function(*args, **kwargs, extra=True)`
+  - `out = any_function(*args, **kwargs, extra=False)` <- default
+  - `extra` should always be the same object (dict, bundle, whatever)
+
 ## immediate todos
 
-- review/approve/merge https://github.com/scikit-image/scikit-image/pull/5444
-- random number generator always uses unified API. https://github.com/scikit-image/scikit-image/issues/5357 Some bits were missing from that PR (use `git grep` to find them). Nice place to unify `random_seed=` or `random_state=` keyword.
+- Juan: review/approve/merge https://github.com/scikit-image/scikit-image/pull/5444
+- random number generator always uses unified API. https://github.com/scikit-image/scikit-image/issues/5357 Some bits were missing from that PR (use `git grep` to find them). Nice place to unify `random_seed=` or `random_state=` keyword. Greg recently opened a PR with some additional random API cleanup (but no parameter renaming): https://github.com/scikit-image/scikit-image/pull/5450
 - review/approve/merge https://github.com/scikit-image/scikit-image/pull/4482
 - Juan: finish RAG migration from skimage.future.
+- Deprecate viewer module, not just ImageViewer class
+- Mark: Push for tifffile dependency update in imageio
+- Juan: Add notes to release instructions about reviewing skimage.future
+- Border mode can be matched to ndimage in 1.0 instead of numpy.pad
+- Mark: Make/tag issue about pooch creating a data dir on import
