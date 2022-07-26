@@ -1,13 +1,7 @@
 # scikit-image Community Call
 
-**- Time:** Tuesday, July 12, 10:00 – 11:00am Pacific
-**- Join via Google Meet:** https://meet.google.com/xnf-ecfu-ddq
-
-**- [scikit-image Community Calendar](https://scientific-python.org/calendars/skimage.ics)**
-**- [Archive — Meeting Notes](https://github.com/scikit-image/meeting-notes)**
-
+**Time:** Tuesday, July 12, 10:00 – 11:00am Pacific
 **Present:** Alex, Lars, Marianne
-
 
 ## Topics
 
@@ -22,6 +16,7 @@
     * A bunch of us are there, too (Greg, Marianne, Juan at least)
     * If sprints can't be virtual, they can be... coincidental (rogue :wink:)
 * Is the sprint already submitted on [scipy2022/sprints](https://www.scipy2022.scipy.org/sprints)?
+
 - [x] Alex needs to check with Greg if he will be available on-site (AFAIK, only Greg is attending): Greg can sprint in-person on Saturday.
 - [ ] Lars needs an invite to join the Discord server.
 
