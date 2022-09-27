@@ -11,8 +11,8 @@
 
 ## Maintenance
 
-- PR https://github.com/scikit-image/scikit-image/pull/6546
-- discussion on "OK to merge label" (also, use filter https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved -- maybe bookmark this page)
+- PR to roll out "dormant" label: https://github.com/scikit-image/scikit-image/pull/6546
+- Discussion on "OK to merge" label (also, use filter https://github.com/scikit-image/scikit-image/pulls?q=is%3Apr+is%3Aopen+review%3Aapproved -- maybe bookmark this page)
 - Marianne: reply to Lars's question on single/double review/approval when contributor is core dev (in general, the usual rule applies)
 - (Stéfan) the rule is that you want two core devs to have looked at the code
 - How to generate release notes
@@ -28,12 +28,11 @@
 
 - Consider communicating in Basic English: https://simple.wikipedia.org/wiki/Basic_English
     - (Lars and Marianne) we don't know who made this suggestion
+    - (Stéfan) answer: it was Alex 
     - we are not targeting a general audience
-    - it's challenging enough to put something complex into words, what if we have to limit ourselves to even fewer words (i.e., 800 words!)...
-    - Might be very useful as a soft goal in our documentation (which part of the documentation?)
-    - we speak "scientific English" anyway, not Shakespeare English
+    - it's challenging enough to put something complex into words, what if we have to limit ourselves to fewer words (i.e., 800 words!)...
+    - Might be relevant as a soft goal in our documentation (which part of the documentation?)
+    - we speak "scientific English" anyway, not Shakespearean English
     - (Marianne) as contributors, we want to *grow* and, hence, the goal isn't to go for the lowest common denominator...
-    - (Stéfan) avoid technical jargon and pompous language, obviously; not sure basic english always simplifies communication for communities who share common understanding of certain topics (think explaining of complex natural phenomena)
-- Add emojis to report with https://github.com/scikit-image/boilerplate-utils/blob/main/skimage_weekly_update.py that indicate the PR or issue state (and tags?): e.g. closed 🤝, open 🙌
-
-## Education and Dissemination
+    - (Stéfan) avoid technical jargon and pompous language, obviously; not sure basic English always simplifies communication for communities who share common understanding of certain topics (think of explaining complex natural phenomena)
+- Add emojis to [weekly report](https://github.com/scikit-image/boilerplate-utils/blob/main/skimage_weekly_update.py) to indicate the PR or issue state (and tags?): e.g., closed 🤝, open 🙌?
