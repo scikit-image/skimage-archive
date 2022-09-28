@@ -22,7 +22,7 @@
 	- we need to define categories (new feature, bug fix, etc.)
 - Broken math (LaTeX) rendering in docs (Lars found the solution! Add a space between '..' and 'math') https://github.com/scikit-image/scikit-image/issues/6547
 - Review work for https://github.com/scikit-image/scikit-image/pull/6462 (+ discussion at https://discuss.scientific-python.org/t/is-the-algorithm-on-division-of-self-overlapping-polygons-a-good-fit/501)
-- Discussion of pathway to skimagev2: should we be getting community input on whether we should take that route? What is the cost of SKIP4, or some of the routes in SKIP3 (advertising via version numbers/docstrings/release notes). What can we get away doing without skimage2?
+- Discussion of pathway to skimagev2: should we be getting community input on whether we should take that route? What is the cost of SKIP4, or some of the routes in SKIP3 (advertising via version numbers/docstrings/release notes). What can we get away doing without skimage2? Expanding the discussion at https://discuss.scientific-python.org/t/a-pragmatic-pathway-towards-skimage2/530
 
 ## Community management
 
