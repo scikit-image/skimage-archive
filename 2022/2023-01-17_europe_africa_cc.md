@@ -17,7 +17,7 @@
 	- Message "Sorry, this team is disabled. You can't edit this note."
 	- HackMD agreed to upgrade our account again; Stéfan emailed them to find out when this will happen
 - Respond to [New (experimental) type stubs for skimage](https://discuss.scientific-python.org/t/621)
-	- CZI5's goal is to type scikit-image
+	- One of the goals of the CZI5 grant is to add type annotations to scikit-image
 	- might be a useful starting point / reference to keep in mind
 - Release 0.20
 	- Blocked by [Build wheels for arm64 on macos
