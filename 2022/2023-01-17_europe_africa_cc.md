@@ -14,7 +14,7 @@
 
 ## Agenda
 
-- [HackMD doc by Scientific Python](https://hackmd.io/@scientific-python/HJWUBDVNi) is readonly?
+- [HackMD doc by Scientific Python](https://hackmd.io/@scientific-python/HJWUBDVNi) is read-only?
   - Message "Sorry, this team is disabled. You can't edit this note."
   - HackMD agreed to upgrade our account again; Stéfan emailed them to find out when this will happen
 - Respond to [New (experimental) type stubs for skimage](https://discuss.scientific-python.org/t/621)
@@ -34,3 +34,9 @@
   - Use pydata-sphinx-theme, e.g. [networkx also uses a gallery](https://networkx.org/documentation/stable/auto_examples/index.html)
   - Lars intends to prepare a draft PR
 - Logo redesign, see https://discuss.scientific-python.org/t/536
+- Lars and Marianne are waiting for their contracts to start using the funds from the CZI5 grant.
+  - [x] Lars will poke NumFOCUS about this on Slack.
+- Marianne asked about announcing our two paid internships: now would be a good time to start advertising for them, since students are typically starting to look for summer internships.
+  - Stéfan said that Juan should be back in Australia, and we may want to meet online with him about this.
+  - We can use https://jobs.numfocus.org/ to publish the two offers.
+  - We can also use https://blog.scientific-python.org/ to spread the word.
