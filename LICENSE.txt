@@ -1,3 +1,10 @@
+Files: *
+Copyright: 2019-2023 the scikit-image team
+License: CC0-1.0
+
+
+License: CC0-1.0
+
 Creative Commons Legal Code
 
 CC0 1.0 Universal
