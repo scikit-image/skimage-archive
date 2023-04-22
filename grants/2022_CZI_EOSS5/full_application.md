@@ -41,7 +41,7 @@ However, specialized array formats have proliferated for specific needs such as 
 
 This proposal aims to do the same for image analysis libraries.
 
-Thanks to its popular position in the ecosystem, scikit-image is already seen as a "standard" API for the community to emulate. For example, NVIDIA's cuCIM library provides a `cucim.skimage` module that emulates the scikit-image API for CuPy arrays. However, since scikit-image grew organically from the contributions of a broad community -- almost 500 direct code contributors -- API inconsistencies exist. Rather than perpetuate these throughout a broader ecosystem, we want to (1) formalize protocols and types for image analysis, and (2) reorganize and annotate scikit-image’s API accordingly. With this, we aim to provide a reference implementation that can be easily extended by other libraries, thereby benefiting usability, discoverability, performance, and community innovation.
+Thanks to its popular position in the ecosystem, scikit-image is already seen as a "standard" API for the community to emulate. For example, NVIDIA's cuCIM library provides a `cucim.skimage` module that emulates the scikit-image API for CuPy arrays. However, since scikit-image grew organically from the contributions of a broad community -- almost 500 direct code contributors -- API inconsistencies exist. Rather than perpetuate these throughout a broader ecosystem, we want to (1) formalize protocols and types for image analysis, and (2) reorganize and annotate scikit-image's API accordingly. With this, we aim to provide a reference implementation that can be easily extended by other libraries, thereby benefiting usability, discoverability, performance, and community innovation.
 
 [Array API]: https://github.com/data-apis/array-api
 
@@ -79,7 +79,7 @@ We will work with Data Umbrella and related organizations to effectively organiz
 
 ### Description of typed API work
 
-The benefits a consistent, type-annotated API extend beyond guidance and documentation. Some benefits we hope to achieve with this project are:
+The benefits of a consistent, type-annotated API extend beyond guidance and documentation. Some benefits we hope to achieve with this project are:
 
 - the scikit-image API will be more easily *discoverable*. For example, in the current API `skimage.segmentation` contains segmentation functions (in the sense of converting images to labels), but also helper functions, and contour segmentation functions (converting "images" to "polygons"). Users cannot know without extensive reading that `segmentation.slic` and `segmentation.watershed` do one type of task, but `segmentation.active_contours` and `segmentation.clear_borders` do entirely different things. Protocols enable users to more quickly discover alternative approaches for their work.
 - scikit-image will become more easily extensible: other libraries can provide their own implementations of particular function classes, which can then be discovered by scikit-image and unified in a single namespace. This will drive innovation and help users find even more potential solutions.
@@ -138,7 +138,7 @@ The above presents a flavor of how we are thinking about these things. There rem
 The step-wise exploration, development and finally formalization of a typed API is critical to enable feedback and draw on the experience of the scientifc community along the way. Therefore, the following milestones are proposed:
 
 - Fully type a submodule of scikit-image as a proof of concept (6th month).
-- Provide a standalone image-focused typing module usable by third party libraries (6th month)
+- Provide a standalone image-focused typing module usable by third-party libraries (6th month)
 - Propose a draft and outline of a new typed API and protocols to the community (12th month).
 - Propose a SKIP (scikit image enhancement proposal) that details a fully typed API and protocols for scikit-image (18th month).
 - Full implementation of the SKIP (24th month).
