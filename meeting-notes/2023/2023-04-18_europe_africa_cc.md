@@ -1,6 +1,6 @@
 # scikit-image Community Call
 
-- **Time:** Tuesday, Apr 18, 2023, 17:00 – 18:00 UTC
+- **Time:** Tuesday, Apr 18, 2023, 23:00 UTC
 - **[Join video call via Zoom](https://us06web.zoom.us/j/88060567580?pwd=THRpaWFnSFNwK0Fycy9FVk5RYnV5UT09)**
 - **Notes:** https://hackmd.io/@scientific-python/HJWUBDVNi
 - **[scikit-image Community Calendar](https://scientific-python.org/calendars/skimage.ics)**
