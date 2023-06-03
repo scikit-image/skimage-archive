@@ -1,4 +1,5 @@
-# Outreachy proposal on `transform` module and thin-plate spines
+# Outreachy proposal on `transform` module and thin-plate splines
+
 References:
 - Feature request: [2D image warping via thin-plate splines #2429 - github.com](https://github.com/scikit-image/scikit-image/issues/2429)
 - Paper: [Bookstein, Fred L. "Principal warps: Thin-plate splines and the decomposition of deformations." IEEE Transactions on pattern analysis and machine intelligence 11.6 (1989): 567-585.](http://user.engineering.uiowa.edu/~aip/papers/bookstein-89.pdf)
@@ -25,7 +26,7 @@ The intern will need one of the following platforms:
 
 ### Project Description
 
-**Title:** Enhance image warping in scikit-image with thin-plate spines
+**Title:** Enhance image warping in scikit-image with thin-plate splines
 
 scikit-image is a Python library for image processing with scientific focus. Its transform module provides a set of algorithms to warp and transform images or volumetric data. These are used in feature detection, image alignment, data compression, modelling, or to correct distortions in fields such as medical imaging, geology, and machine learning.
 
@@ -47,7 +48,7 @@ The intern will experience the end-to-end process from conception of a new idea 
 
 Apart from personal improvement, the intern will also engage with and become part of a welcoming, skilled, international and science focused community that values openness, collaboration and diversity. The mentors and the scikit-image team would be very happy to see new opportunities develop following the internship.
 
-### Community benefits
+### Community Benefits
 This project will add a robust, flexible and requested warping algorithm to the scikit-image and in extension make it available to a wide community of scientists and Python users. This, and smaller tasks that are part of the internship, will also benefit the codebase and scikit-image and in general. It is the hope of the scikit-image team, that this internship will be an entry point for a new member of the open source community.
 
 ### Project Contribution Information
@@ -78,12 +79,12 @@ Please introduce yourself on the public project chat:
 Log in with GitHub or create a new account. Join topic ["Outreachy" under stream "sprint"](https://skimage.zulipchat.com/#narrow/stream/176555-sprint/topic/Outreachy). Please introduce yourself and post there! You are welcome to tag your mentor (Lars Grüter @lagru) or send him a private message if you have questions.
 - **Developer forum** - You can find helpful documentation about this communication tool [here](https://meta.discourse.org/t/discourse-new-user-guide/96331). Once you join the project's communication channel, the mentors have some additional instructions for you to follow:
   This is a good place for longer-form discussions, project-wide topics, decision making and more general discussion of contributions. Before creating a topic here, please search for similar or related ones first and create it in "Contributor & Developer discussion" » "scikit-image" or another appropriate category.
-  [Follow this link](https://discuss.scientific-python.org/c/contributor/skimage/22) to join this project's public chat.
+  [Follow this link](https://discuss.scientific-python.org/c/contributor/skimage/22) to join this project's public forum.
 Log in with GitHub or create a new account. Feel welcome to tag your mentor (Lars Grüter @lagru) or send him a private message to introduce yourself and ask questions.
 
 - **GitHub** - You can find helpful documentation about this communication tool [here](https://docs.github.com/en). Once you join the project's communication channel, the mentors have some additional instructions for you to follow:
   This is scikit-image's most formal communication space. We aim to keep issues, pull requests and comments focused on the specific development task at hand and on topic. Before creating a new issue or pull request here, please search for similar or related ones first. If in doubt whether post a topic here, you are very welcome to ask on our other communication channels first (Developer forum, Zulip). Also, feel free to tag your mentor (Lars Grüter @lagru) at anytime.
-  [Follow this link](https://github.com/scikit-image/scikit-image) to join this project's public chat.
+  [Follow this link](https://github.com/scikit-image/scikit-image) to join this project's public repo.
 
 Outreachy mentors will often be in the community public chat. The project mentor's usernames are: mkcor, lagru,
 
