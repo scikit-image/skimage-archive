@@ -15,7 +15,7 @@
 
 - Release v0.21
   - Don't test numpy nightlies due to transcendental functions issue https://github.com/scikit-image/scikit-image/pull/6973
-  - Don't highlight the JupyterLite as we are reverting it temporarily for v0.21 https://github.com/scikit-image/scikit-image/pull/6972 -> removed highlight label from https://github.com/scikit-image/scikit-image/pull/6911
+  - Don't highlight the JupyterLite button as we are reverting it temporarily for v0.21 https://github.com/scikit-image/scikit-image/pull/6972 -> removed highlight label from https://github.com/scikit-image/scikit-image/pull/6911
   - Update release notes https://github.com/scikit-image/scikit-image/pull/6949
 - Updating eagle.png broke v0.19
   - Which solution should we take? Revert or create patch release https://gitlab.com/scikit-image/data/-/merge_requests/22#note_1413062475
