@@ -30,5 +30,5 @@
 - [EOSS 6](https://chanzuckerberg.com/rfa/essential-open-source-software-for-science/)
   - Lars has until January 2025 on current grant
   - [CZI Data Insights Cycle 3 (Single Cell)](https://chanzuckerberg.com/rfa/single-cell-data-insights/)
-  - Marianne will reach out to potential collaborator on CZI LoIT
+  - Marianne will reach out to potential collaborator on CZI LOI
   - **DEADLINE:** October 17th
