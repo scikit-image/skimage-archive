@@ -1,6 +1,6 @@
 # scikit-image Community Call
 
-- **Time:** Tuesday, November 21, 2023, 16:00 – 17:00 UTC
+- **Time:** Tuesday, December 05, 2023, 16:00 – 17:00 UTC
 - **[Join video call via Jitsi](https://framatalk.org/skimage-community)**
 <!-- - **[Join video call via Zoom](https://us06web.zoom.us/j/88060567580?pwd=THRpaWFnSFNwK0Fycy9FVk5RYnV5UT09)** -->
 - **Notes:** https://hackmd.io/@scientific-python/HJWUBDVNi
@@ -10,7 +10,7 @@
 
 **Present:** Lars, Stéfan
 
-## Agenda 12/05
+## Agenda
 
 - mybinder links for older versions
 	- remove links from docs?
