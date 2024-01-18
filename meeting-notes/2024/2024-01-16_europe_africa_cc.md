@@ -23,3 +23,4 @@
 
 - Conferences
   - [SciPy 2024](https://www.scipy2024.scipy.org) is Jul 8-14 in Tacoma, proposal deadline: Feb 27, 2024
+  - Waiting for the announcement of EuroSciPy 2024: Maybe organize an in-person scikit-image meeting right before/after? 
