@@ -1,6 +1,6 @@
 # Meeting notes "Coordinating skimage2" 
 
-- June 29, 2024 at 20:00 UTC
+- January 29, 2024 at 20:00 UTC
 - [Video meeting room](https://meet.evolix.org/skimage-meeting)
 - [Discussion thread](https://discuss.scientific-python.org/t/yet-another-pathway-towards-skimage-v2/859/6)
 
@@ -24,21 +24,19 @@
   - Weekly dev update from Lars on discuss.scientific-python.org community list
 
 - *How should work be prioritized?*
-  - There's a new tag: [`🥾 Path to skimage2`](https://github.com/scikit-image/scikit-image/labels/%3Ahiking_boot%3A%20Path%20to%20skimage2)
+  - There's a new label: [`🥾 Path to skimage2`](https://github.com/scikit-image/scikit-image/labels/%3Ahiking_boot%3A%20Path%20to%20skimage2)
   - Use GitHub project (new) or rather a milestone? 
   - Requesting reviews?
-  - ...?
+    - Maintainers replied they were fine being requested PR reviews (using GitHub's feature).
 
-- *How do we speed-up consensus-seeking and decision making for the new API?*
-  - [Clarify objection period for lazy consensus in SKIP 1 #7020](https://github.com/scikit-image/scikit-image/pull/7020)
-  - ...?
+- *How do we speed up consensus-seeking and decision-making for the new API?*
+  - Clarify objection period for lazy consensus in SKIP 1: [#7020](https://github.com/scikit-image/scikit-image/pull/7020)
 
 - *How can paid maintainers help with bottlenecks?*
-  - Coordinate consensus seeking periods and call votes?
-  - ...?
+  - Coordinate consensus-seeking periods and call votes?
 
 - Stéfan: Request to core developers, for the six months starting around May:
-  - Please attend weekly meetings where possible
+  - Please attend community calls whenever possible
   - Please follow along with 2.0 issues on GH (we have to make decisions rapidly and move on)
   - Please review as much 2.0 transition code as possible
 
@@ -47,9 +45,9 @@
 ### Starting now
 
 - Make as many [non-breaking changes](https://github.com/scikit-image/scikit-image/wiki/API-changes-for-skimage2#proposed-api-changes-doable-ahead-of-skimage2) as possible
-  - **Note: not many releases to complete deprecations!**
+  - **Note: There are not many releases left to complete deprecation cycles!**
 - Concretize breaking-changes
-  - e.g. which functions use automatic scaling?
+  - e.g., which functions use automatic scaling?
 - Settle pending decisions
 - Make skimage2 folder to make it very easy to play around with
 
@@ -88,7 +86,7 @@
 
 **User perspective:**
 
-- Can use `skimage` and `skimage2` a the same time 
+- Can use `skimage` and `skimage2` at the same time 
 - Easy to explain
 - With upgrade, users are notified about transition via warning
 - With upgrade, user code isn't broken
@@ -104,6 +102,6 @@
 
 - We care about public API first
 - Type description in docstrings will be ground truth
-  - Automatic stub generation from docstrings, e.g [docs2stubs](https://github.com/gramster/docs2stubs)
+  - Automatic stub generation from docstrings, e.g, [docs2stubs](https://github.com/gramster/docs2stubs)
 - CI does type checking only on test suite
 - Expect iterative process
