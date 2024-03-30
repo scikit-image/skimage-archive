@@ -20,7 +20,7 @@
   - Same with `osgeo.gdal`
   - I suspect nose style `setup` and `teardown` have broken for some time now ([deprecated by pytest](https://docs.pytest.org/en/latest/changelog.html#id179))
     We need to clean that up ASAP
-  - For 2.0, remove plugin infrastructure, support thin interface around `imageio`; users should simply bring their own NumPy arrays. We can document libraries like fits, etc.
+  - For 2.0, remove plugin infrastructure, support thin interface around `imageio`; users should simply bring their own NumPy arrays. We can document libraries like [fits](https://docs.astropy.org/en/stable/io/fits/index.html), etc.
   	- `imageio` has its own plugin system.
 - NumPy 2.0 release candidate is out
   - Nightly job is broken, possibly due to NumPy 2.1.0?
