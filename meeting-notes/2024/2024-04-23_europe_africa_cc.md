@@ -50,7 +50,7 @@
   - Deprecate plugin infrastructure in `skimage.io` in favor of `imageio`
     - What's the scope of the deprecation?
     - Parameter `plugin` is used in old API and `imageio`, so pass-through would compete...
-    - Marianne: Not keeping `imread`, `imsave` around is actually clearer from an educational perspective -> `imageio` for IO, skimage for processing once we have an array
+    - Marianne: It's not essentially our job to provide IO utilities (such as `imread` and `imsave`); it doesn't matter the IO library (imageio or other) as long as it returns a NumPy array, which can then be processed with scikit-image (Data Carpentry inspiration: IO vs image processing are two separate conceptual boxes).
     - Stéfan: imageio is not returning a "proper" array, would be good to keep a wrapper around that returns a pure NumPy array
 - Not sure how to address [libatlas 3.10.3 related failures on debian](https://github.com/scikit-image/scikit-image/issues/7399)
   - How to debug other architectures locally?
