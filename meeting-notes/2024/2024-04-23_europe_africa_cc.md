@@ -8,7 +8,7 @@
 - **[Archive — Meeting Notes](https://github.com/scikit-image/meeting-notes)**
 - **[Code of Conduct](https://scikit-image.org/docs/stable/conduct/code_of_conduct.html)**
 
-**Present:** Marianne, Adeyemi, Lars
+**Present:** Marianne, Biola, Lars
 
 [Reviewed by Stéfan/Lars afterwards]
 
