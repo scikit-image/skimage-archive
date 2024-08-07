@@ -12,7 +12,7 @@
 
 ## Agenda
 
-- Discussed spin: It's just a 'normal' dependency!
+- Discussed spin: It's just a 'normal' dependency (i.e., will get its new features when we update its version, cf. https://github.com/scikit-image/scikit-image/blob/bbf94f879ffe197f96305c37593a86b43206b4c9/requirements/build.txt#L11).
 - Marianne: create issue at https://github.com/dask/dask about imread relying on our ski.io.imread
 - Joined [skimage/napari tutorial](https://cfp.scipy.org/2024/talk/PQMQ3K/) at SciPy 2024 next week
   - Prepping https://github.com/scipy-2024-image-analysis/tutorial
