@@ -15,7 +15,7 @@
 - [NumFOCUS board election](https://github.com/numfocus/elections)
   - How do we allocate our 3 votes as a member project
     - Something like [Instant-runoff voting](https://en.wikipedia.org/wiki/Instant-runoff_voting) might be a good fit if we can implement it
-  - Action: short team meeting to achieve consensus on vote 
+  - Action: Schedule short team meeting to achieve consensus on vote 
 
 - Release 0.25.0
   - Status?
@@ -24,7 +24,7 @@
 - EOSS5 no-cost extension
   - > approved internally and [...] the funder, SVCF [...] should be in touch with the amendment within the coming weeks. 
   - new grant end date: January 31, 2026
-    - At current burn rate will spend funds ~October/November 2025
+    - At current burn rate, will spend funds by ~October/November 2025
   - interim report due: 1/1/2025
   - final report due: 4/1/2026
 
@@ -32,7 +32,7 @@
   - Do only a single gallery run, in parallel; disable for other docs builds
     - Should not need to build docs on >1 platform
   - Can also reduce coverage; not needed on multiple platforms
-  - Mark certain tests as slow, and only run them on a single target (rolling ball, e.g.)
+  - Mark certain tests as slow, and only run them on a single target (e.g., rolling ball)
   - Ensure we have caching on repeated PRs
 
 - **Review coordination & triage**
