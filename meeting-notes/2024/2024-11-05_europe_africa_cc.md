@@ -51,10 +51,10 @@
     - scikit-image users
         - How to use it (in general - `SKIMAGE_NO_DISPATCHING`, etc.)
         - Introspection/logging/warnings : DispatchNotification, etc.
-    - Backend developers(on the [development page](https://scikit-image.org/docs/dev/development/index.html))
+    - Backend developers (on the [development page](https://scikit-image.org/docs/dev/development/index.html))
         - What makes up a valid backend?
         - entry_points : “skimage_backends”, ”skimage_backend_infos” (“implementation” and “info”)
-        - How does things like `can_has` work?
+        - How do things like `can_has` work?
         - How does scikit-image offer testing facilities for backends?
     - Implementation details
         - entry_point mechanism
@@ -62,7 +62,7 @@
         - Testing details
         - How does the backends’ metadata gets handled, etc.
     - Should some of it go into a SKIP-5? - https://scikit-image.org/docs/dev/skips/index.html
-    - TODO[Aditi]: continue this(or other developments) in [PR#7513](https://github.com/scikit-image/scikit-image/pull/7513)
+    - TODO [Aditi]: continue this (or other developments) in [PR#7513](https://github.com/scikit-image/scikit-image/pull/7513)
 
 - Created [#dispatching](https://discord.com/channels/786703927705862175/1303422714987679754) channel on SP discord for day-to-day discussions
 
@@ -70,17 +70,18 @@
   - Which ones are necessary and why do they exist?
   - Eventually we should ensure ecosystem-wide consistency
     - `get_implementation` vs having the algorithms as the attributes of the entry_point object
-    - Having some consistency in setup/private functions’ names : like steps(or functions involved) in fetching the backends(`all_backends()` vs `_get_backends()`) and then fetching the implementations from the backends, and loading the backend metadata(or info), etc. (adding these functions/setup in `spatch`?); Meaning and usage of the term “backend info” in scikit-image Vs networkx
+    - Having some consistency in setup/private functions’ names : like steps (or functions involved) in fetching the backends (`all_backends()` vs `_get_backends()`) and then fetching the implementations from the backends, and loading the backend metadata (or info), etc. (adding these functions/setup in `spatch`?)
+    - Meaning and usage of the term “backend info” in scikit-image vs networkx
     - Naming:
         - `can_has` vs `can_run`
-        - `dispatchable` vs _dispatchable`
+        - `dispatchable` vs `_dispatchable`
         - `_backends.py` vs `backends.py` (maybe ok to have this difference, because both projects are organised differently)
     - Should NetworkX’s logging and BackendInfo be more modular like scikit-image’s?
   - [Lars] It would be best to address these once we have a good enough prototype in place. 
  
-- [TODO] Letting users set the order of backends instead of hard coding it.
+- [TODO] Letting users set the order of backends instead of hard-coding it.
 
 - potential backend libraries, for reference, other than `cuCIM`?
 
-- NumFOCUS’s SDG R3 : might get notified tomorrow
+- NumFOCUS’s SDG R3: might get notified tomorrow
     - If positive, next step would be - ICA form (draft): https://hackmd.io/@Schefflera-Arboricola/SynEV9vZ1x (contract will finalise within 1-3 weeks (based on the responsiveness of PI and contractor) of submitting the above form)
