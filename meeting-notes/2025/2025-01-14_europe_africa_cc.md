@@ -37,7 +37,7 @@
 
 
 
-## Feedback on dispatching design
+### Feedback on dispatching design
 
 - Currently in https://github.com/scikit-image/scikit-image/pull/7520 - dispatched to the alphabetically first backend
 - Type-based dispatching 
@@ -54,7 +54,7 @@
 - ...
 
 
-## ToDos(for dispatching):
+### ToDos(for dispatching):
 
 - After https://github.com/scikit-image/scikit-image/pull/7520 and https://github.com/betatim/scikit-image/pull/1 (need to fix tests in this PR) are merged in, integrate a basic backend setup in cucim; get feedback from cucim people! Lars will try to review these this week.
 - [Aditi] Testing backends using scikit-image’s tests - backend provided the array conversion functions? or some other approaches? - discussed above.
