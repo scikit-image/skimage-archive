@@ -1,6 +1,6 @@
 # scikit-image Community Call
 
-- **Time:** Tue, 2024-01-14, 18:00 – 19:00 UTC
+- **Time:** Tue, 2025-01-14, 18:00 – 19:00 UTC
 - **[Join video call via Jitsi](https://meet.evolix.org/skimage-meeting)**
 - ~~**[Join video call via Zoom](https://us06web.zoom.us/j/88060567580?pwd=THRpaWFnSFNwK0Fycy9FVk5RYnV5UT09)**~~
 - **Notes:** https://hackmd.io/@scientific-python/HJWUBDVNi
