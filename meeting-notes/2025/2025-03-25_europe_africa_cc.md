@@ -1,0 +1,51 @@
+# scikit-image Community Call
+
+- **Time:** Tue, 2025-03-25, 18:00 – 19:00 UTC
+- **[Join video call via Jitsi](https://meet.evolix.org/skimage-meeting)**
+- **[scikit-image Community Calendar](https://scientific-python.org/calendars/skimage.ics)**
+- **[Archive — Meeting Notes](https://github.com/scikit-image/skimage-archive/tree/main/meeting-notes)**
+- **[Code of Conduct](https://scikit-image.org/docs/stable/conduct/code_of_conduct.html)**
+
+**Present:** Matthew Brett, Marianne Corvellec, Aditi Juneja
+
+
+## Agenda
+
+### Transform API
+
+Matthew started refactoring the API of our geometric transforms. Given a set of source
+coordinates and another set (same number of points) of destination coordinates, the goal
+is to estimate the matrix which transforms the former into the latter, as captured by a
+few parameters (for scale, rotation, translation). The computation is thus an optimization
+one, starting with some initialization.
+
+Matthew explained how unsatisfactory the current initialization was, since the `estimate`
+method does not use starting parameters. Also, the current `estimate` method returns `True`
+or `False` (whether the optimization computation has converged or not), whereas we would
+want *something* to return an actual transform (perhaps with parameter values None/NaN in
+case of failure).
+
+Open PR: [#7754](https://github.com/scikit-image/scikit-image/pull/7754)
+
+### scikit-image in-person sprint
+
+Marianne joined late and mentioned the in-person sprint which is scheduled to take place
+over 2 (3?) days somewhere between Aug 12--16 in Vienna, Austria. But we haven't found a
+venue yet.
+
+### Fundamental matrix
+
+Matthew started looking at our implementation of the fundamental matrix, which transforms
+the coordinates of image points as 'seen' by a camera into their coordinates as seen by a
+different camera. Another pair of eyes would be welcome; Marianne said she would have a look.
+
+Open issue: https://github.com/colmap/colmap/issues/3222
+Reference paper: https://users.cecs.anu.edu.au/~hartley/Papers/fundamental/fundamental.pdf
+
+### Dispatching
+
+* Aditi is working on a draft PR: [#7727](https://github.com/scikit-image/scikit-image/pull/7727)
+* She would like some feeback on her new instructions for
+  [using backends](https://github.com/scikit-image/scikit-image/blob/91461e7f4a91e7e06f0e7017dc5f8249afe4aca4/doc/source/user_guide/backends.rst)
+* The question is about handling/passing environment variables
+  - See how other projects (e.g., NetworkX) do it?
