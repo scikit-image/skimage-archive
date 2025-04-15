@@ -2,6 +2,7 @@
 
 - **Time:** Tue, 2025-03-25, 18:00 – 19:00 UTC
 - **[Join video call via Jitsi](https://meet.evolix.org/skimage-meeting)**
+- **Notes:** https://hackmd.io/-HCxhoU4RSiC-RzVMyoweg
 - **[scikit-image Community Calendar](https://scientific-python.org/calendars/skimage.ics)**
 - **[Archive — Meeting Notes](https://github.com/scikit-image/skimage-archive/tree/main/meeting-notes)**
 - **[Code of Conduct](https://scikit-image.org/docs/stable/conduct/code_of_conduct.html)**
@@ -32,6 +33,10 @@ Open PR: [#7754](https://github.com/scikit-image/scikit-image/pull/7754)
 Marianne joined late and mentioned the in-person sprint which is scheduled to take place
 over 2 (3?) days somewhere between Aug 12--16 in Vienna, Austria. But we haven't found a
 venue yet.
+Meanwhile, she will be participating in the
+[GloBIAS workshop](https://globias-bioimageanalysts.github.io/2025-04-07-GloBIASDataCarpentry-Workshop/)
+dedicated to updating the Data Carpentry image processing curriculum
+for bioimage analysis practitioners, also in Vienna (or just nearby).
 
 ### Fundamental matrix
 
@@ -48,4 +53,13 @@ Reference paper: https://users.cecs.anu.edu.au/~hartley/Papers/fundamental/funda
 * She would like some feeback on her new instructions for
   [using backends](https://github.com/scikit-image/scikit-image/blob/91461e7f4a91e7e06f0e7017dc5f8249afe4aca4/doc/source/user_guide/backends.rst)
 * The question is about handling/passing environment variables
-  - See how other projects (e.g., NetworkX) do it?
+  - See how other projects (e.g., Matplotlib, Dask, NetworkX) do it?
+  - Matplotlib backends: https://matplotlib.org/stable/users/explain/figure/writing_a_backend_pyplot_interface.html#entry-point (uses entry-points)
+    Matthew admits that the consequences of changing backends in Matplotlib
+    (i.e., figures rendering differently) are not the same as changing backends
+    in an image processing pipeline (i.e., possibly getting different results). 
+    Matplotlib's dispatching?
+    - Aditi mentions Dask's [entry-point based dispatching](https://docs.dask.org/en/latest/how-to/selecting-the-collection-backend.html):
+    context manager (`with dask.config.set({"array.backend": "cupy"})`), knowing
+    that Dask already had global configs set via the same context manager
+    (https://docs.dask.org/en/latest/configuration.html).
