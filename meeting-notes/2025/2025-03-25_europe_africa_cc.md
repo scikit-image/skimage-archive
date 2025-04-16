@@ -50,8 +50,9 @@ Reference paper: https://users.cecs.anu.edu.au/~hartley/Papers/fundamental/funda
 ### Dispatching
 
 * Aditi is working on a draft PR: [#7727](https://github.com/scikit-image/scikit-image/pull/7727)
-* She would like some feeback on her new instructions for
-  [using backends](https://github.com/scikit-image/scikit-image/blob/91461e7f4a91e7e06f0e7017dc5f8249afe4aca4/doc/source/user_guide/backends.rst)
+* She would like some feedback on the newly added environment variable(s) and context manager approaches to dispatch to different backends -- see [PR#7727](https://github.com/scikit-image/scikit-image/pull/7727)
+    -- maybe from someone who works with large image data and uses / has used scikit-image
+	  (i.e., an actual user of dispaching)?
 * The question is about handling/passing environment variables
   - See how other projects (e.g., Matplotlib, Dask, NetworkX) do it?
   - Matplotlib backends: https://matplotlib.org/stable/users/explain/figure/writing_a_backend_pyplot_interface.html#entry-point (uses entry-points)
