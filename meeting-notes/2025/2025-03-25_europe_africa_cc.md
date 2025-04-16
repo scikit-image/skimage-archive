@@ -50,7 +50,8 @@ Reference paper: https://users.cecs.anu.edu.au/~hartley/Papers/fundamental/funda
 ### Dispatching
 
 * Aditi is working on a draft PR: [#7727](https://github.com/scikit-image/scikit-image/pull/7727)
-* She would like some feedback on the newly added environment variable(s) and context manager approaches to dispatch to different backends -- see [PR#7727](https://github.com/scikit-image/scikit-image/pull/7727)
+* She would like some feedback on the newly added environment variable(s) and context manager
+approaches to dispatching to different backends -- see [PR#7727](https://github.com/scikit-image/scikit-image/pull/7727)
     -- maybe from someone who works with large image data and uses / has used scikit-image
 	  (i.e., an actual user of dispaching)?
 * The question is about handling/passing environment variables
