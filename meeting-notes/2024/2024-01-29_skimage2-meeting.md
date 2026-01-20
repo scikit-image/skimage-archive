@@ -47,7 +47,7 @@
 - Make as many [non-breaking changes](https://github.com/scikit-image/scikit-image/wiki/API-changes-for-skimage2#proposed-api-changes-doable-ahead-of-skimage2) as possible
   - **Note: There are not many releases left to complete deprecation cycles!**
 - Concretize breaking-changes
-  - e.g., which functions use automatic scaling?
+  - e.g., which functions use implicit rescaling?
 - Settle pending decisions
 - Make skimage2 folder to make it very easy to play around with
 
@@ -61,7 +61,7 @@
 
 - Every PR / change goes into a migration document
 
-### 2024-11, Release candiate with new API
+### 2024-11, Release candidate with new API
 
 - Release candidate: `scikit-image==0.25.0`
   - identical with previous `scikit-image==0.24.0`
